@@ -24,10 +24,11 @@ export function getData(numSamples) {
   function normalRandom(mean = 0, variance = 1) {
     let v1, v2, s;
     do {
-      v1 = 2 * Math.random() - 1;
-      v2 = 2 * Math.random() - 1;
-      s = v1 * v1 + v2 * v2;
-    } while (s > 1);
+      v1 = 2 * Math.random() - 1;  // -1到1的随机数 u
+      v2 = 2 * Math.random() - 1; // v
+      s = v1 * v1 + v2 * v2; // s
+    } while (s > 1); 
+    
   
     let result = Math.sqrt(-2 * Math.log(s) / s) * v1;
     return mean + Math.sqrt(variance) * result;
