@@ -23,6 +23,7 @@ window.onload = async () => {
       l2: 1
     })
   }))
+  model.add(tf.layers.dropout({rate: 0.9}))
   model.add(
     tf.layers.dense({
       units: 1,
