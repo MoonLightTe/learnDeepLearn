@@ -18,7 +18,10 @@ window.onload = async () => {
   model.add(tf.layers.dense({
     units: 10,
     inputShape: [2],
-    activation:'tanh'
+    activation:'tanh',
+    kernelRegularizer: tf.regularizers.l2({
+      l2: 1
+    })
   }))
   model.add(
     tf.layers.dense({
